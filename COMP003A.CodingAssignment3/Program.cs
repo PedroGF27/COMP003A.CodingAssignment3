@@ -38,6 +38,40 @@ namespace COMP003A.CodingAssignment3
                     continue;
                 }
 
+                switch (number)
+                {
+                    case 1:
+                        int index = Array.FindIndex(expenses, name => name == null); // First empty index
+                        if (index == -1) // checks if array is full
+                        {
+                            Console.WriteLine("Maximum amount of expenses added."); // display when array if filled
+                            break;
+                        }
+                        
+
+                        Console.Write("Expense name: "); // prompt for expense name
+                        expenses[index] = Console.ReadLine(); // store the name
+
+                        try
+                        {
+                            Console.Write("Expense amount: ");
+                            amounts[index] = Convert.ToDouble(Console.ReadLine());
+                            if (amounts[index] <= 0) // check if amount entered is positive
+                            {
+                                throw new ArgumentException("Must be positive number."); // throws exception if invalid
+
+                            }
+                        }
+                        catch (Exception ex) // catch exceptions
+                        {
+                            Console.WriteLine($"Error: {ex.Message}. Not added"); // display error message
+                            expenses[index] = null; // clear if invalid
+                        }
+                        break;
+                            
+                        
+                }
+
             }
         }
     }
