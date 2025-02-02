@@ -87,8 +87,24 @@ namespace COMP003A.CodingAssignment3
                         Console.WriteLine($"Remaining budget: ${remaining}"); // display remaining budget
                         break;
                     case 3:
-                        Console.Write("Name of expense you want to remmove: ");
-                        string expenseRemoval = Console.ReadLine();
+                        Console.Write("Name of expense you want to remmove: "); // Prompt to write name of expense user wants removed
+                        string expenseRemoval = Console.ReadLine(); 
+                        int indexRemoval = Array.FindIndex(expenses, name => name == expenseRemoval); // find index of expense name
+                        if (indexRemoval != -1) // checks if expense is found
+                        {
+                            expenses[indexRemoval] = null; // clear expense name
+                            amounts[indexRemoval] = 0; // clear amount
+                            Console.WriteLine("Removed."); // display to notify it is removed
+                        }
+                        else
+                        {
+                            Console.WriteLine("Not found, Try again."); // If not found, message is displayed
+                        }
+                        break;
+                    case 4:
+                        exit = true;
+                        Console.WriteLine("Leaving Program");
+
                         
 
                             
