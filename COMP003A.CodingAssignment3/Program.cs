@@ -102,8 +102,12 @@ namespace COMP003A.CodingAssignment3
                         }
                         break;
                     case 4:
-                        exit = true;
-                        Console.WriteLine("Leaving Program");
+                        exit = true;// set to true to end program.
+                        Console.WriteLine("Leaving Program"); // display message to exit
+                        break;
+                    default:
+                        Console.WriteLine("Invalid, Please try again."); // Display error message 
+                        break;
 
                         
 
