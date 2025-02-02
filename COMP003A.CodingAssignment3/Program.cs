@@ -68,6 +68,29 @@ namespace COMP003A.CodingAssignment3
                             expenses[index] = null; // clear if invalid
                         }
                         break;
+
+                    case 2:
+                        double totalExpenses = 0;
+
+                        Console.WriteLine("All Expenses:"); 
+                        for (int i = 0; i < expenses.Length; i++) // loop through array
+                        {
+                            if (expenses[i] != null) // checks if expenses are null
+                            {
+                                Console.WriteLine($"{expenses[i]}: ${amounts[i]}"); // display expense name and amount
+                                totalExpenses += amounts[i]; // add to expenses
+                            }
+                        }
+                        double remaining = userIncome - totalExpenses; //  calculate remaining budget
+
+                        Console.WriteLine($"Total Expenses: ${totalExpenses}"); // display total expenses
+                        Console.WriteLine($"Remaining budget: ${remaining}"); // display remaining budget
+                        break;
+                    case 3:
+                        Console.Write("Name of expense you want to remmove: ");
+                        string expenseRemoval = Console.ReadLine();
+                        
+
                             
                         
                 }
