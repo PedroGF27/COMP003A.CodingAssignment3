@@ -10,12 +10,26 @@ namespace COMP003A.CodingAssignment3
     {
         static void Main(string[] args)
         {
-            double userIncome;
+            double userIncome = 0;
+            while (true)
+            {
+                try
+                {
 
-            
-            Console.Write("Enter your montly income: "); // prompt to add income
-            userIncome = double.Parse(Console.ReadLine());
 
+                    Console.Write("Enter your montly income: "); // prompt to add income
+                    userIncome = double.Parse(Console.ReadLine());
+                    if (userIncome <= 0) // checks if number is positive
+                    {
+                        throw new ArgumentException("Must be positive number");
+                    }
+                    break;
+                }
+                catch (Exception ex) //  catch exceptions
+                {
+                    Console.WriteLine($"Invalid: {ex.Message}. Try Again");
+                }
+            }
             string[] expenses = new string[5]; // to hold 5 expense names
             double[] amounts = new double[5]; // to hold 5 expences
             
