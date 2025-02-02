@@ -34,11 +34,13 @@ namespace COMP003A.CodingAssignment3
             double[] amounts = new double[5]; // to hold 5 expences
             
             bool exit = false; // control the loop
-            while (exit) // ensure it keeps going till user exit's
+            while (!exit) // ensure it keeps going till user exit's
             {
 
-                Console.WriteLine("1. Add an expense\n2. View expenses"); // display options
-                Console.WriteLine("3. Remove an Expense\n4. Exit"); // display options
+                Console.WriteLine("1. Add an expense"); // display options
+                Console.WriteLine("2. View expenses");
+                Console.WriteLine("3. Remove an expense");
+                Console.WriteLine("4. Exit"); // display options
                 Console.Write("Choose an option: ");
 
                 int number;
